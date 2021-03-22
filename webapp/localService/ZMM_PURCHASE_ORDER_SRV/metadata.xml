@@ -1,0 +1,583 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="1983ce97e95d8ac80f604023" xml:lang="it" sap:schema-version="1">
+            <EntityType Name="PurchaseOrderHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="255" sap:unicode="false"/>
+                <Property Name="Descriptionup" Type="Edm.String" MaxLength="255" sap:unicode="false"/>
+                <Property Name="Creationdate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:filter-restriction="interval" sap:unicode="false"/>
+                <Property Name="Deliverydate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:filter-restriction="interval" sap:unicode="false"/>
+                <Property Name="Creator" Type="Edm.String" MaxLength="12" sap:unicode="false"/>
+                <Property Name="Requestor" Type="Edm.String" MaxLength="12" sap:unicode="false"/>
+                <Property Name="Printprice" Type="Edm.Boolean" sap:unicode="false"/>
+                <Property Name="Quotationnumber" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Currencycode" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:semantics="currency-code"/>
+                <Property Name="Netamount" Type="Edm.Decimal" Precision="17" Scale="3" sap:unicode="false" sap:unit="Currencycode"/>
+                <Property Name="Statusrelease" Type="Edm.String" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Statuscode" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Statuscriticality" Type="Edm.Byte" sap:unicode="false"/>
+                <Property Name="Statusdescription" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Vendorid" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Purchasinggroupid" Type="Edm.String" MaxLength="3" sap:unicode="false"/>
+                <Property Name="Customerid" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Addressid" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Noteligiblevendorjustification" Type="Edm.String" MaxLength="70" sap:unicode="false"/>
+                <Property Name="Jobscope" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Ordertype" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Liacompliant" Type="Edm.String" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Nonliacompliantjustification" Type="Edm.String" MaxLength="255" sap:unicode="false"/>
+                <Property Name="Nonliacompliantjustificationup" Type="Edm.String" MaxLength="255" sap:unicode="false"/>
+                <Property Name="Process" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Processjustification" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Delegationtype" Type="Edm.String" MaxLength="70" sap:unicode="false"/>
+                <Property Name="Delegationtypeup" Type="Edm.String" MaxLength="70" sap:unicode="false"/>
+                <Property Name="Delegationdate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:filter-restriction="interval" sap:unicode="false"/>
+                <Property Name="Delegationactiveflag" Type="Edm.String" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Action" Type="Edm.String" sap:unicode="false"/>
+                <NavigationProperty Name="PurchaseOrderItems" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderItems" FromRole="FromRole_PurchaseOrderHeaderItems" ToRole="ToRole_PurchaseOrderHeaderItems"/>
+                <NavigationProperty Name="Attachments" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderAttachments" FromRole="FromRole_PurchaseOrderHeaderAttachments" ToRole="ToRole_PurchaseOrderHeaderAttachments"/>
+                <NavigationProperty Name="Vendor" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderVendor" FromRole="ToRole_PurchaseOrderHeaderVendor" ToRole="FromRole_PurchaseOrderHeaderVendor"/>
+                <NavigationProperty Name="DeliveryAddress" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderAddress" FromRole="ToRole_PurchaseOrderHeaderAddress" ToRole="FromRole_PurchaseOrderHeaderAddress"/>
+                <NavigationProperty Name="PurchasingGroup" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderPurchasingGroup" FromRole="ToRole_PurchaseOrderHeaderPurchasingGroup" ToRole="FromRole_PurchaseOrderHeaderPurchasingGroup"/>
+                <NavigationProperty Name="LongText" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderHeaderLongText" FromRole="FromRole_PurchaseOrderHeaderLongText" ToRole="ToRole_PurchaseOrderHeaderLongText"/>
+            </EntityType>
+            <EntityType Name="PurchaseOrderItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PurchaseorderId"/>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="PurchaseorderId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Doc. acquisti" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Posizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Testo breve" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Requestor" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Richiedente" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Deleted" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ind. cancell." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Shorttext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Testo breve" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Unitmeasureid" sap:label="Qtà ORDACQ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unitprice" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:unit="Currencycode" sap:label="Prezzo netto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Netamount" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currencycode" sap:label="Valore netto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Printprice" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Stampa prezzo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currencycode" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Divisa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Unitmeasureid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="UM ORDACQ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Materialgroupid" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Gruppo merci" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Accountingassignmentcategoryid" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Cat.contab." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contractid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Contratto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contractitemid" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Pos. contratto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fundsid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fondi accanton." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fundsitemid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Pos. doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Costcenterid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CdC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mainassetid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Allegato" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subassetid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="N. second." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orderid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Ordine" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wbselementid" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Elem. WBS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="AccountAssignmentCategory" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemAccountAssignmentCat" FromRole="ToRole_PurchaseOrderItemAccountAssignmentCat" ToRole="FromRole_PurchaseOrderItemAccountAssignmentCat"/>
+                <NavigationProperty Name="Asset" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemAsset" FromRole="ToRole_PurchaseOrderItemAsset" ToRole="FromRole_PurchaseOrderItemAsset"/>
+                <NavigationProperty Name="Contract" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemContract" FromRole="ToRole_PurchaseOrderItemContract" ToRole="FromRole_PurchaseOrderItemContract"/>
+                <NavigationProperty Name="CostCenter" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemCostCenter" FromRole="ToRole_PurchaseOrderItemCostCenter" ToRole="FromRole_PurchaseOrderItemCostCenter"/>
+                <NavigationProperty Name="Fund" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemFund" FromRole="ToRole_PurchaseOrderItemFund" ToRole="FromRole_PurchaseOrderItemFund"/>
+                <NavigationProperty Name="InternalOrder" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemInternalOrder" FromRole="ToRole_PurchaseOrderItemInternalOrder" ToRole="FromRole_PurchaseOrderItemInternalOrder"/>
+                <NavigationProperty Name="MaterialGroup" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemMaterialGroup" FromRole="ToRole_PurchaseOrderItemMaterialGroup" ToRole="FromRole_PurchaseOrderItemMaterialGroup"/>
+                <NavigationProperty Name="WBSElement" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemWBSElement" FromRole="ToRole_PurchaseOrderItemWBSElement" ToRole="FromRole_PurchaseOrderItemWBSElement"/>
+                <NavigationProperty Name="UnitOfMeasure" Relationship="1983ce97e95d8ac80f604023.PurchaseOrderItemUnitOfMeasure" FromRole="ToRole_PurchaseOrderItemUnitOfMeasure" ToRole="FromRole_PurchaseOrderItemUnitOfMeasure"/>
+            </EntityType>
+            <EntityType Name="Vendor" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fornitore"/>
+                <Property Name="Companycode" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Società"/>
+                <Property Name="Currencycode" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Divisa ORDACQ" sap:semantics="currency-code"/>
+                <Property Name="Deleted" Type="Edm.Boolean" sap:unicode="false" sap:label="Flag di canc."/>
+                <Property Name="Postblocked" Type="Edm.Boolean" sap:unicode="false" sap:label="Blocco registr."/>
+                <Property Name="Imposedblocked" Type="Edm.Boolean" sap:unicode="false" sap:label="Blocco acq."/>
+                <Property Name="Vendorgroup" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Gruppo conti"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Cognome"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Via"/>
+                <Property Name="Postalcode" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="CAP"/>
+                <Property Name="City" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Località"/>
+                <Property Name="Locality" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Regione"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Paese"/>
+                <Property Name="Criticality" Type="Edm.Byte" sap:unicode="false"/>
+                <Property Name="Classification" Type="Edm.String" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Classificationlanguage" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Lingua"/>
+                <Property Name="Classificationtext" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Descr. breve"/>
+            </EntityType>
+            <EntityType Name="MaterialGroup" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:unicode="false"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="20" sap:unicode="false"/>
+                <Property Name="Descriptionlong" Type="Edm.String" MaxLength="60" sap:unicode="false"/>
+                <Property Name="Valuationclass" Type="Edm.String" MaxLength="4" sap:unicode="false"/>
+                <Property Name="GLaccount" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="Country" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="15" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="CostCenter" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CdC"/>
+                <Property Name="Area" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Contr. area"/>
+                <Property Name="Validfrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Inizio validità"/>
+                <Property Name="Validto" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fine validità"/>
+                <Property Name="Responsible" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Responsabile"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Lingua"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Descrizione"/>
+            </EntityType>
+            <EntityType Name="InternalOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Ordine"/>
+                <Property Name="Type" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Tipo di ordine"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Tsto br."/>
+                <Property Name="Companycode" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Società"/>
+                <Property Name="Responsible" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="CdC respons."/>
+                <Property Name="Deleted" Type="Edm.Boolean" sap:unicode="false" sap:label="Flag di canc."/>
+                <Property Name="Released" Type="Edm.Boolean" sap:unicode="false" sap:label="Rilasciato"/>
+                <Property Name="Endofwork" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fine lavoro"/>
+            </EntityType>
+            <EntityType Name="Address" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Group" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Name" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Name2" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Street" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="HouseNumber" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="PostalCode" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="City" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Region" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Country" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Unitmeasure"/>
+                </Key>
+                <Property Name="Unitmeasure" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unità mis. int." sap:semantics="unit-of-measure"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Lingua"/>
+                <Property Name="Code" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Commerciale"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Testo UM 1"/>
+            </EntityType>
+            <EntityType Name="PurchasingGroup" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Gruppo acquisti"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="Definizione"/>
+                <Property Name="Fax" Type="Edm.String" MaxLength="31" sap:unicode="false" sap:label="Telefax"/>
+                <Property Name="Phone" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Telefono"/>
+            </EntityType>
+            <EntityType Name="Fund" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Item"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fondi accanton."/>
+                <Property Name="Item" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Pos. doc."/>
+                <Property Name="Description" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:label="Testo"/>
+                <Property Name="Currencycode" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Divisa transaz." sap:semantics="currency-code"/>
+                <Property Name="Amount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currencycode" sap:label="Importo aperto"/>
+                <Property Name="Completion" Type="Edm.Boolean" sap:unicode="false" sap:label="Pos. conclusa"/>
+                <Property Name="Blocked" Type="Edm.Boolean" sap:unicode="false" sap:label="Pos.bloccata"/>
+                <Property Name="Criticality" Type="Edm.Byte" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="WBSElement" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Elemento WBS"/>
+                <Property Name="Wbelement" Type="Edm.String" MaxLength="24" sap:unicode="false" sap:label="Elemento WBS"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Definizione"/>
+                <Property Name="Responsible" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="CdC respons."/>
+                <Property Name="Objectkey" Type="Edm.String" MaxLength="22" sap:unicode="false" sap:label="Numero oggetto"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Stato"/>
+            </EntityType>
+            <EntityType Name="Asset" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Subasset"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Allegato"/>
+                <Property Name="Subasset" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="N. second."/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Lingua"/>
+                <Property Name="Companycode" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Società"/>
+                <Property Name="Deleted" Type="Edm.Boolean" sap:unicode="false" sap:label="Indic. di canc."/>
+                <Property Name="Locked" Type="Edm.Boolean" sap:unicode="false" sap:label="Blocco acquis."/>
+                <Property Name="Description" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:label="Denominazione"/>
+                <Property Name="Class" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Classe cespiti"/>
+                <Property Name="Classdescription" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Testo breve"/>
+            </EntityType>
+            <EntityType Name="Contract" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Item"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Item" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false"/>
+                <Property Name="Title" Type="Edm.String" MaxLength="12" sap:unicode="false"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
+                <Property Name="Currencycode" Type="Edm.String" MaxLength="5" sap:unicode="false"/>
+                <Property Name="Unitprice" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false"/>
+                <Property Name="Unit" Type="Edm.String" MaxLength="3" sap:unicode="false"/>
+                <Property Name="Doccategory" Type="Edm.String" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Validfrom" Type="Edm.DateTime" Precision="7" sap:unicode="false"/>
+                <Property Name="Validto" Type="Edm.DateTime" Precision="7" sap:unicode="false"/>
+                <Property Name="Vendor" Type="Edm.String" MaxLength="10" sap:unicode="false"/>
+                <Property Name="Materialgroup" Type="Edm.String" MaxLength="9" sap:unicode="false"/>
+                <Property Name="Filecontent" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Fileurl" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="AccountAssignmentCategory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false"/>
+                <Property Name="Description" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="LongText" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Purchaseorder"/>
+                </Key>
+                <Property Name="Purchaseorder" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Doc. acquisti" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Headertext" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Headernote" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Headerdeliverynote" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Attachment" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="PurchaseOrderHeaderId"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" sap:unicode="false"/>
+                <Property Name="PurchaseOrderHeaderId" Type="Edm.String" Nullable="false" sap:unicode="false"/>
+                <Property Name="FileName" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="MimeType" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="FileContent" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="URL" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="CreatedOn" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Timestamp"/>
+                <Property Name="CreatedBy" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="ArchiveTypeId" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="Deleted" Type="Edm.Boolean" sap:unicode="false" sap:label="Indicatore"/>
+            </EntityType>
+            <EntityType Name="JobScope" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ambito commessa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Ambito commessa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="OrderType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Tipo commessa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Tipo commessa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Process" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Procedura" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Procedura" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ProcessExplanation" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Giustificazione procedura" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Giustificazione proc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ArchiveType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Archivetypeid"/>
+                </Key>
+                <Property Name="Archivetypeid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Tipo doc."/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Lingua"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Def. estesa"/>
+                <Property Name="Standard" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Stato tipo documento"/>
+                <Property Name="Sapobject" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Tipo ogg."/>
+            </EntityType>
+            <Association Name="PurchaseOrderHeaderPurchasingGroup" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.PurchasingGroup" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderPurchasingGroup"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="ToRole_PurchaseOrderHeaderPurchasingGroup"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderPurchasingGroup">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderPurchasingGroup">
+                        <PropertyRef Name="Purchasinggroupid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderHeaderLongText" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderLongText"/>
+                <End Type="1983ce97e95d8ac80f604023.LongText" Multiplicity="0..1" Role="ToRole_PurchaseOrderHeaderLongText"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderLongText">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderLongText">
+                        <PropertyRef Name="Purchaseorder"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderHeaderAttachments" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderAttachments"/>
+                <End Type="1983ce97e95d8ac80f604023.Attachment" Multiplicity="*" Role="ToRole_PurchaseOrderHeaderAttachments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderAttachments">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderAttachments">
+                        <PropertyRef Name="PurchaseOrderHeaderId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderHeaderItems" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderItems"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="*" Role="ToRole_PurchaseOrderHeaderItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderItems">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderItems">
+                        <PropertyRef Name="PurchaseorderId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemAccountAssignmentCat" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.AccountAssignmentCategory" Multiplicity="1" Role="FromRole_PurchaseOrderItemAccountAssignmentCat"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemAccountAssignmentCat"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemAccountAssignmentCat">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemAccountAssignmentCat">
+                        <PropertyRef Name="Accountingassignmentcategoryid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderHeaderAddress" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.Address" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderAddress"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="ToRole_PurchaseOrderHeaderAddress"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderAddress">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderAddress">
+                        <PropertyRef Name="Addressid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemWBSElement" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.WBSElement" Multiplicity="1" Role="FromRole_PurchaseOrderItemWBSElement"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemWBSElement"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemWBSElement">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemWBSElement">
+                        <PropertyRef Name="Wbselementid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemFund" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.Fund" Multiplicity="1" Role="FromRole_PurchaseOrderItemFund"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemFund"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemFund">
+                        <PropertyRef Name="Item"/>
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemFund">
+                        <PropertyRef Name="Fundsitemid"/>
+                        <PropertyRef Name="Fundsid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemContract" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.Contract" Multiplicity="1" Role="FromRole_PurchaseOrderItemContract"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemContract"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemContract">
+                        <PropertyRef Name="Id"/>
+                        <PropertyRef Name="Item"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemContract">
+                        <PropertyRef Name="Contractid"/>
+                        <PropertyRef Name="Contractitemid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderHeaderVendor" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.Vendor" Multiplicity="1" Role="FromRole_PurchaseOrderHeaderVendor"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderHeader" Multiplicity="1" Role="ToRole_PurchaseOrderHeaderVendor"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderHeaderVendor">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderHeaderVendor">
+                        <PropertyRef Name="Vendorid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemInternalOrder" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.InternalOrder" Multiplicity="1" Role="FromRole_PurchaseOrderItemInternalOrder"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemInternalOrder"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemInternalOrder">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemInternalOrder">
+                        <PropertyRef Name="Orderid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemMaterialGroup" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.MaterialGroup" Multiplicity="1" Role="FromRole_PurchaseOrderItemMaterialGroup"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemMaterialGroup"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemMaterialGroup">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemMaterialGroup">
+                        <PropertyRef Name="Materialgroupid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemAsset" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.Asset" Multiplicity="1" Role="FromRole_PurchaseOrderItemAsset"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemAsset"/>
+            </Association>
+            <Association Name="PurchaseOrderItemCostCenter" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.CostCenter" Multiplicity="1" Role="FromRole_PurchaseOrderItemCostCenter"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemCostCenter"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemCostCenter">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemCostCenter">
+                        <PropertyRef Name="Costcenterid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PurchaseOrderItemUnitOfMeasure" sap:content-version="1">
+                <End Type="1983ce97e95d8ac80f604023.UnitOfMeasure" Multiplicity="1" Role="FromRole_PurchaseOrderItemUnitOfMeasure"/>
+                <End Type="1983ce97e95d8ac80f604023.PurchaseOrderItem" Multiplicity="1" Role="ToRole_PurchaseOrderItemUnitOfMeasure"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PurchaseOrderItemUnitOfMeasure">
+                        <PropertyRef Name="Unitmeasure"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PurchaseOrderItemUnitOfMeasure">
+                        <PropertyRef Name="Unitmeasureid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="1983ce97e95d8ac80f604023_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PurchaseOrderHeaders" EntityType="1983ce97e95d8ac80f604023.PurchaseOrderHeader" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PurchaseOrderItems" EntityType="1983ce97e95d8ac80f604023.PurchaseOrderItem" sap:content-version="1"/>
+                <EntitySet Name="Vendors" EntityType="1983ce97e95d8ac80f604023.Vendor" sap:content-version="1"/>
+                <EntitySet Name="MaterialGroups" EntityType="1983ce97e95d8ac80f604023.MaterialGroup" sap:content-version="1"/>
+                <EntitySet Name="Countries" EntityType="1983ce97e95d8ac80f604023.Country" sap:content-version="1"/>
+                <EntitySet Name="CostCenters" EntityType="1983ce97e95d8ac80f604023.CostCenter" sap:content-version="1"/>
+                <EntitySet Name="InternalOrders" EntityType="1983ce97e95d8ac80f604023.InternalOrder" sap:content-version="1"/>
+                <EntitySet Name="Addresses" EntityType="1983ce97e95d8ac80f604023.Address" sap:content-version="1"/>
+                <EntitySet Name="UnitsOfMeasure" EntityType="1983ce97e95d8ac80f604023.UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="PurchasingGroups" EntityType="1983ce97e95d8ac80f604023.PurchasingGroup" sap:content-version="1"/>
+                <EntitySet Name="Funds" EntityType="1983ce97e95d8ac80f604023.Fund" sap:content-version="1"/>
+                <EntitySet Name="WBSElements" EntityType="1983ce97e95d8ac80f604023.WBSElement" sap:content-version="1"/>
+                <EntitySet Name="Assets" EntityType="1983ce97e95d8ac80f604023.Asset" sap:content-version="1"/>
+                <EntitySet Name="Contracts" EntityType="1983ce97e95d8ac80f604023.Contract" sap:content-version="1"/>
+                <EntitySet Name="AccountAssignmentCategories" EntityType="1983ce97e95d8ac80f604023.AccountAssignmentCategory" sap:content-version="1"/>
+                <EntitySet Name="LongTexts" EntityType="1983ce97e95d8ac80f604023.LongText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Attachments" EntityType="1983ce97e95d8ac80f604023.Attachment" sap:content-version="1"/>
+                <EntitySet Name="JobScopes" EntityType="1983ce97e95d8ac80f604023.JobScope" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="OrderTypes" EntityType="1983ce97e95d8ac80f604023.OrderType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Processes" EntityType="1983ce97e95d8ac80f604023.Process" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ProcessExplanations" EntityType="1983ce97e95d8ac80f604023.ProcessExplanation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ArchiveTypes" EntityType="1983ce97e95d8ac80f604023.ArchiveType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="PurchaseOrderHeaderVendorSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderVendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Vendors" Role="FromRole_PurchaseOrderHeaderVendor"/>
+                    <End EntitySet="PurchaseOrderHeaders" Role="ToRole_PurchaseOrderHeaderVendor"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemCostCenterSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemCostCenter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CostCenters" Role="FromRole_PurchaseOrderItemCostCenter"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemCostCenter"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemAssetSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemAsset" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Assets" Role="FromRole_PurchaseOrderItemAsset"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemAsset"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemContractSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemContract" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Contracts" Role="FromRole_PurchaseOrderItemContract"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemContract"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemAccountAssignmentCatSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemAccountAssignmentCat" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="AccountAssignmentCategories" Role="FromRole_PurchaseOrderItemAccountAssignmentCat"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemAccountAssignmentCat"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderHeaderAttachment" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderAttachments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PurchaseOrderHeaders" Role="FromRole_PurchaseOrderHeaderAttachments"/>
+                    <End EntitySet="Attachments" Role="ToRole_PurchaseOrderHeaderAttachments"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemUnitOfMeasureSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemUnitOfMeasure" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="UnitsOfMeasure" Role="FromRole_PurchaseOrderItemUnitOfMeasure"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemUnitOfMeasure"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderHeaderPurchasingGroupSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderPurchasingGroup" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PurchasingGroups" Role="FromRole_PurchaseOrderHeaderPurchasingGroup"/>
+                    <End EntitySet="PurchaseOrderHeaders" Role="ToRole_PurchaseOrderHeaderPurchasingGroup"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemWBSElementSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemWBSElement" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="WBSElements" Role="FromRole_PurchaseOrderItemWBSElement"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemWBSElement"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemFundSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemFund" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Funds" Role="FromRole_PurchaseOrderItemFund"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemFund"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemInternalOrderSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemInternalOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="InternalOrders" Role="FromRole_PurchaseOrderItemInternalOrder"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemInternalOrder"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderItemMaterialGroupSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderItemMaterialGroup" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MaterialGroups" Role="FromRole_PurchaseOrderItemMaterialGroup"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderItemMaterialGroup"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderHeaderPurchaseOrderLinePurc" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PurchaseOrderHeaders" Role="FromRole_PurchaseOrderHeaderItems"/>
+                    <End EntitySet="PurchaseOrderItems" Role="ToRole_PurchaseOrderHeaderItems"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderHeaderAddressSet" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderAddress" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Addresses" Role="FromRole_PurchaseOrderHeaderAddress"/>
+                    <End EntitySet="PurchaseOrderHeaders" Role="ToRole_PurchaseOrderHeaderAddress"/>
+                </AssociationSet>
+                <AssociationSet Name="PurchaseOrderHeaderLongTexts" Association="1983ce97e95d8ac80f604023.PurchaseOrderHeaderLongText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PurchaseOrderHeaders" Role="FromRole_PurchaseOrderHeaderLongText"/>
+                    <End EntitySet="LongTexts" Role="ToRole_PurchaseOrderHeaderLongText"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZMM_PURCHASE_ORDER_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZMM_PURCHASE_ORDER_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

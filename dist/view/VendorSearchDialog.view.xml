@@ -1,0 +1,59 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ch.neo.fiori.mm.grchange.controller.VendorSearchDialog">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>VendorTitle}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<List id="ch.neo.fiori.mm.grchange.vendorSearchResultList" mode="SingleSelectMaster" width="100%" headerText="Header"
+				footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="5" growingScrollToLoad="false"
+				items="{PurchaseOrderModel>/Vendors}">
+				<headerToolbar>
+					<Toolbar visible="true" enabled="true" width="" design="Solid">
+						<content>
+							<SearchField placeholder="{i18n>VendorSearch}" showSearchButton="true" visible="true" width="100%" 
+							 liveChange="_onSearchFieldLiveChange"/>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<CustomListItem type="Active" selected="false">
+						<HBox >
+							<VBox width="100%" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom sapUiNoMarginBottom">
+								<FlexBox alignItems="Start" justifyContent="SpaceBetween" class="sapUiSmallMarginEnd">
+									<items>
+										<Title level="H3" text="{PurchaseOrderModel>Name}" />
+										<ObjectStatus class="sapUiSmallMarginBegin" text="{PurchaseOrderModel>Taxtext}" state="Success" />
+									</items>
+								</FlexBox>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox width="100%" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom sapUiNoMarginTop">
+								<FlexBox alignItems="Start" justifyContent="SpaceBetween" class="sapUiSmallMarginEnd">
+									<items>
+										<Label text="{PurchaseOrderModel>Country} - {PurchaseOrderModel>Postalcode} {PurchaseOrderModel>City}" />
+										<ObjectStatus text="{PurchaseOrderModel>Classificationtext}" state="{parts:[{path:'PurchaseOrderModel>Criticality'}], formatter: '.formatter.vendorClassificationStatusState'}" />
+									</items>
+								</FlexBox>
+							</VBox>
+						</HBox>
+					</CustomListItem>
+				</items>
+				<!--
+				<m:items>
+					<m:StandardListItem title="{PurchaseOrderModel>Name}" description="{PurchaseOrderModel>Country} - {PurchaseOrderModel>Postalcode} {PurchaseOrderModel>City}" type="Active" selected="false"
+						info="{PurchaseOrderModel>Classificationtext}" infoState="{parts:[{path: 'PurchaseOrderModel>Criticality'}], formatter:'.formatter.vendorClassificationStatusState'}"/>
+				</m:items>
+				-->
+			</List>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>VendorOK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onOkButtonPress"/>
+			<Button text="{i18n>VendorKO}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onCancelButtonPress"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</mvc:View>

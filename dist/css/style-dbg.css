@@ -1,0 +1,22 @@
+.neoSelectError {
+    border: 2px solid #e52929;
+}
+
+
+/*
+the neoFUHidden class is used to hide a 'standard' file upload input by putting it below a 'custom' upload input
+*/
+
+.neoFUHidden {
+
+   visibility: hidden;
+}
+
+/*
+the neoCenterTxt class is used to center text Box Messages
+*/
+
+.neoCenterTxt {
+      text-align: center;
+ 
+}

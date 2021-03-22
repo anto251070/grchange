@@ -1,0 +1,89 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:filterbar="sap.ui.comp.filterbar"
+	controllerName="ch.neo.fiori.mm.grchange.controller.GRList" displayBlock="true">
+	<Page title="{i18n>title}">
+		<content>
+			<filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true"
+				filtersDialogSearch="onfiltersDialogSearch" search="onSearch">
+				<filterbar:filterItems>
+					<filterbar:FilterItem label="{i18n>labelPO}" name="purchase">
+						<filterbar:control>
+							<Input id="purchase" valueHelpOnly="false" maxLength="10"/>
+						</filterbar:control>
+					</filterbar:FilterItem>
+					<filterbar:FilterItem label="{i18n>labelVendor}" name="vendor" labelTooltip="Filter Item">
+						<filterbar:control>
+							<Input id="vendor" valueHelpOnly="false" showValueHelp="true" valueHelpRequest="onValueHelpRequestVendor" maxLength="10"/>
+						</filterbar:control>
+					</filterbar:FilterItem>
+					<filterbar:FilterItem label="{i18n>labelgracquisti}" name="gracquisti" labelTooltip="{i18n>labelgracquisti}">
+						<filterbar:control>
+							<Input id="purchasingGroup" valueHelpOnly="false" showValueHelp="true" valueHelpRequest="onValueHelpRequestPurchasingGroup" maxLength="3"/>
+						</filterbar:control>
+					</filterbar:FilterItem>
+					<filterbar:FilterItem label="{i18n>creator}" name="creatoda" labelTooltip="{i18n>creator}">
+						<filterbar:control>
+							<Input id="createdby" valueHelpOnly="false" showValueHelp="true" valueHelpRequest="onValueHelpRequestUsers" maxLength="12"/>
+						</filterbar:control>
+					</filterbar:FilterItem>
+				</filterbar:filterItems>
+			</filterbar:FilterBar>
+			<VBox class="sapUiMediumMarginBeginEnd" fitContainer="true" wrap="Wrap">
+				<items>
+					<Table width="100%" id="goodsreceiptlist" growing="true" growingScrollToLoad="true" growingThreshold="20" mode="None"
+						itemPress="onItemPress" updateFinished="onUpdateFinished" items="{path: '/GoodsReceiptHeaders', parameters:{expand: 'GoodsReceiptItems'}}">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title textAlign="Begin" text="{i18n>labelGoodsReceipts}"/>
+								<Title text=""/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelGRNumber}" width="auto"/>
+								</header>
+							</Column>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelCreationDate}" width="auto"/>
+								</header>
+							</Column>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelBC}" width="auto"/>
+								</header>
+							</Column>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelOrder}" width="auto"/>
+								</header>
+							</Column>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelVendor}" width="auto"/>
+								</header>
+							</Column>
+							<Column width="auto" minScreenWidth="Phone">
+								<header>
+									<Text text="{i18n>labelDescription}" width="auto"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation">
+								<cells>
+									<ObjectIdentifier title="{Id}" text=""/>
+									<ObjectStatus text="{path: 'PostingDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.YYYY' } }"/>
+									<Text text="{BillOfLadingDocumentNumber}"/>
+									<Link text="{PurchaseOrderHeaderId}" id="ch.neo.fiori.mm.grchange.Table.Items.NavToPurchase" emphasized="true" press="onNavToPurchaseOrder"/>
+									<Text text="{VendorName}"/>
+									<Text text="{Description}" maxLines="3"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

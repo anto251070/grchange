@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<form:Form width="100%" editable="true" visible="true">
+		<form:title/>
+		<form:formContainers>
+
+			<form:FormContainer visible="true">
+				<form:formElements>
+					<form:FormElement visible="true">
+						<form:label>
+							<Label text="{i18n>PostingDateLabel}" design="Standard" width="40%" required="false" textAlign="Begin" textDirection="RTL"/>
+						</form:label>
+						<form:fields>
+							<DatePicker value="{path: 'GoodsReceiptDelete>/PostingDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" enabled="true" visible="true" width="20%" displayFormat="dd.MM.yyyy" required="true" id="in_postdate"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement visible="true">
+						<form:label>
+							<Label text="{i18n>CreationDateLabel}" design="Standard" width="40%" required="false" textAlign="Begin" textDirection="RTL"/>
+						</form:label>
+						<form:fields>
+							<DatePicker value="{path: 'GoodsReceiptDelete>/CreationDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" 
+							 enabled="true" visible="true" width="20%" displayFormat="dd.MM.yyyy" required="true" id="in_createdate" change="onhandlechangedate"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement visible="true">
+						<form:label>
+							<Label text="{i18n>BillOfLading}" design="Standard" width="40%" required="false" textAlign="Begin" textDirection="RTL"/>
+						</form:label>
+						<form:fields>
+							<Text text="{GoodsReceiptDelete>/BillOfLadingDocumentNumber}" id="in_LadingDocument" width="20%"/>
+							 <!--textAlign="Initial" textDirection="LTR"/>-->
+						</form:fields>
+					</form:FormElement>
+ 
+				</form:formElements>
+				<form:title/>
+			</form:FormContainer>
+		</form:formContainers>
+		<form:layout>
+			<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+		</form:layout>
+	</form:Form>
+</core:FragmentDefinition>

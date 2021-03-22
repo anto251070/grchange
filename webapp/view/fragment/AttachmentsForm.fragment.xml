@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<UploadCollection id="UploadCollection" maximumFileSize="10" multiple="false" change="onAttachChange" uploadComplete="onUploadComplete"
+		beforeUploadStarts="onBeforeUploadStarts" mode="None" noDataText="{i18n>AttachNoLine}"
+		items="{path: 'GoodsReceiptDelete>/Files', templateShareable: false}" sameFilenameAllowed="false" showSeparators="Inner"
+		uploadEnabled="true" fileDeleted="onAttachDeleted" mimeType="application/pdf">
+		<!--typeMissmatch="onAttachTypeMissmatch">-->
+		<toolbar>
+			<OverflowToolbar>
+				<Title id="attachmentTitle" text="{i18n>AttachTitle}"/>
+				<ToolbarSpacer/>
+				<UploadCollectionToolbarPlaceholder id="uploadPlaceHolder"/>
+				<Button width="auto" id="newAttachment" icon="sap-icon://add" press="onNewAttachment" tooltip="{i18n>AttachNew}"/>
+			</OverflowToolbar>
+		</toolbar>
+		<items>
+			<UploadCollectionItem documentId="{GoodsReceiptDelete>AttachmentId}" fileName="{GoodsReceiptDelete>FileName}"
+				mimeType="{GoodsReceiptDelete>MimeType}" 
+				url="{GoodsReceiptDelete>URL}" enableEdit="false" visibleEdit="false">
+				<attributes>
+					<ObjectAttribute title="{i18n>AttachType}" text="{GoodsReceiptDelete>Description}"/>
+					<ObjectAttribute title="{i18n>AttachCreatedOn}"
+						text="{path: 'GoodsReceiptDelete>CreatedOn', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium'}}"/>
+					<ObjectAttribute title="{i18n>AttachCreatedBy}" text="{GoodsReceiptDelete>CreatedBy}"/>
+					<!--<ObjectAttribute title="{i18n>AttachType}" text="{GoodsReceiptDelete>ArchiveType}" id="attribute0"/>-->
+					<!--<ObjectAttribute  title="{i18n>AttachCreatedOn}"text="attribute text" id="attribute1"/>-->
+				</attributes>
+			</UploadCollectionItem>
+		</items>
+	</UploadCollection>
+</core:FragmentDefinition>

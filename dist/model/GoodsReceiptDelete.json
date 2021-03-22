@@ -1,0 +1,14 @@
+{
+	"Id": "",
+	"MaterialDocumentYear": "",
+	"PurchaseOrderHeaderId": "",
+	"PostingDate": null,
+	"CreationDate": null,
+	"VendorName":"",
+	"Description": "",
+	"BillOfLadingDocumentNumber": "",
+	"Creator": "",
+	"Action": "",
+	"Files": [],
+ 	"GoodsReceiptItems": []
+}

@@ -1,0 +1,297 @@
+{
+    "resources": [
+        {
+            "name": "Component-changes.json"
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/GRChange-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/GRChange.controller.js"
+        },
+        {
+            "name": "controller/GRList-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/GRList.controller.js"
+        },
+        {
+            "name": "controller/PurchasingGroupSearchDialog-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/PurchasingGroupSearchDialog.controller.js"
+        },
+        {
+            "name": "controller/UserSearchDialog-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/UserSearchDialog.controller.js"
+        },
+        {
+            "name": "controller/VendorSearchDialog-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/VendorSearchDialog.controller.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "libs/Attachments-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/Attachments.js"
+        },
+        {
+            "name": "libs/Commons-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/Commons.js"
+        },
+        {
+            "name": "localService/ZMM_PURCHASE_ORDER_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/Files.json"
+        },
+        {
+            "name": "model/GoodsReceiptDelete.json"
+        },
+        {
+            "name": "model/GoodsReceiptDeleteItems.json"
+        },
+        {
+            "name": "model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "tmp/Component-changes.json"
+        },
+        {
+            "name": "tmp/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp/Component.js"
+        },
+        {
+            "name": "tmp/controller/App.controller.js"
+        },
+        {
+            "name": "tmp/controller/BaseController.js"
+        },
+        {
+            "name": "tmp/controller/GRChange.controller.js"
+        },
+        {
+            "name": "tmp/controller/GRList.controller.js"
+        },
+        {
+            "name": "tmp/controller/PurchasingGroupSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp/controller/UserSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp/controller/VendorSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp/css/style.css"
+        },
+        {
+            "name": "tmp/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "tmp/libs/Attachments.js"
+        },
+        {
+            "name": "tmp/libs/Commons.js"
+        },
+        {
+            "name": "tmp/localService/ZMM_PURCHASE_ORDER_SRV/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/metadata.xml"
+        },
+        {
+            "name": "tmp/manifest.json"
+        },
+        {
+            "name": "tmp/model/Files.json"
+        },
+        {
+            "name": "tmp/model/GoodsReceiptDelete.json"
+        },
+        {
+            "name": "tmp/model/GoodsReceiptDeleteItems.json"
+        },
+        {
+            "name": "tmp/model/formatter.js"
+        },
+        {
+            "name": "tmp/model/models.js"
+        },
+        {
+            "name": "tmp/view/App.view.xml"
+        },
+        {
+            "name": "tmp/view/GRDelete.view.xml"
+        },
+        {
+            "name": "tmp/view/GRList.view.xml"
+        },
+        {
+            "name": "tmp/view/PurchasingGroupSearchDialog.view.xml"
+        },
+        {
+            "name": "tmp/view/UserSearchDialog.view.xml"
+        },
+        {
+            "name": "tmp/view/VendorSearchDialog.view.xml"
+        },
+        {
+            "name": "tmp/view/fragment/AttachmentTypes.fragment.xml"
+        },
+        {
+            "name": "tmp/view/fragment/AttachmentsForm.fragment.xml"
+        },
+        {
+            "name": "tmp/view/fragment/GeneralDataForm.fragment.xml"
+        },
+        {
+            "name": "tmp/view/fragment/ItemsForm.fragment.xml"
+        },
+        {
+            "name": "tmp-dbg/Component.js"
+        },
+        {
+            "name": "tmp-dbg/controller/App.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/BaseController.js"
+        },
+        {
+            "name": "tmp-dbg/controller/GRChange.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/GRList.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/PurchasingGroupSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/UserSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/VendorSearchDialog.controller.js"
+        },
+        {
+            "name": "tmp-dbg/css/style.css"
+        },
+        {
+            "name": "tmp-dbg/libs/Attachments.js"
+        },
+        {
+            "name": "tmp-dbg/libs/Commons.js"
+        },
+        {
+            "name": "tmp-dbg/model/formatter.js"
+        },
+        {
+            "name": "tmp-dbg/model/models.js"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/GRDelete.view.xml"
+        },
+        {
+            "name": "view/GRList.view.xml"
+        },
+        {
+            "name": "view/PurchasingGroupSearchDialog.view.xml"
+        },
+        {
+            "name": "view/UserSearchDialog.view.xml"
+        },
+        {
+            "name": "view/VendorSearchDialog.view.xml"
+        },
+        {
+            "name": "view/fragment/AttachmentTypes.fragment.xml"
+        },
+        {
+            "name": "view/fragment/AttachmentsForm.fragment.xml"
+        },
+        {
+            "name": "view/fragment/GeneralDataForm.fragment.xml"
+        },
+        {
+            "name": "view/fragment/ItemsForm.fragment.xml"
+        }
+    ]
+}

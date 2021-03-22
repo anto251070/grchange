@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" controllerName="ch.neo.fiori.mm.grchange.controller.UserSearchDialog">
+	<m:Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{@i18n>userTitle}" type="Standard"
+		verticalScrolling="true">
+		<m:content>
+			<m:List id="ch.neo.fiori.mm.grchange.userSearchResultList" mode="SingleSelectMaster" width="100%" headerText="Header"
+				backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="5" growingScrollToLoad="false" items="{/Users}">
+				<m:headerToolbar>
+					<m:Toolbar visible="true" enabled="true" design="Solid">
+						<m:content>
+							<m:SearchField placeholder="{@i18n>searchPlaceholder}" showSearchButton="true" visible="true" width="100%"
+								liveChange="_onSearchFieldLiveChange"/>
+						</m:content>
+					</m:Toolbar>
+				</m:headerToolbar>
+				<m:items>
+					<m:StandardListItem title="{Completename}" description="{Username}" type="Active" selected="false"/>
+				</m:items>
+			</m:List>
+		</m:content>
+		<m:beginButton/>
+		<m:buttons>
+			<m:Button text="{@i18n>userOK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onOkButtonPress"/>
+			<m:Button text="{@i18n>userKO}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onCancelButtonPress"/>
+		</m:buttons>
+		<m:customHeader/>
+		<m:endButton/>
+		<m:subHeader/>
+	</m:Dialog>
+</mvc:View>
